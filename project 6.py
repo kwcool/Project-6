@@ -1,4 +1,5 @@
    # encode by kyle weiner
+   # decode added by jaden despeines
 
 def encode(password):
     encoded_password = ''
@@ -8,7 +9,14 @@ def encode(password):
     return encoded_password
 
 def decode(encoded_password):
-    pass #good luck
+    original_pw = ""
+    for char in encoded_password:
+        if int(char) < 3:
+            original_pw = original_pw + str(int(char) + 7)
+        else:
+            original_pw = original_pw + str(int(char) - 3)
+    return original_pw
+
 
 if __name__ == '__main__':
     while True:
